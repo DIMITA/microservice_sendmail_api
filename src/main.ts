@@ -4,7 +4,7 @@ import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
 const user = 'guest';
 const pwd = 'guest';
-const host = 'localhost';
+const host = 'rabbitmq';
 const port = 5672;
 
 async function bootstrap() {
@@ -19,6 +19,7 @@ async function bootstrap() {
       },
     },
   });
+  app.startAllMicroservices();
   await app.listen(3009);
 }
 bootstrap();
