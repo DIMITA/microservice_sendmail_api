@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+    mailhog:
+        image: mailhog/mailhog
+        ports:
+            - 8025:8025
+            - 1025:1025
+        networks:
+            - sendmail
+
+    node:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile
+        restart: on-failure
+        networks:
+            - sendmail
+
+networks:
+    sendmail:
+
+
+volumes:
+    db-data:
