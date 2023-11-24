@@ -4,7 +4,7 @@ import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
 const user = 'guest';
 const pwd = 'guest';
-const host = 'rabbitmq';
+const host = 'host.docker.internal';
 const port = 5672;
 
 async function bootstrap() {
